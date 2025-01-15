@@ -55,7 +55,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 type Props = {}
 const Header = (props: Props) => {
     return (
-        <AppBar position="static" className="bg-gray-500 ">
+        <AppBar position="fixed" className="bg-gray-500">
             <Container className="flex justify-between">
                 <Toolbar>
                     <IconButton

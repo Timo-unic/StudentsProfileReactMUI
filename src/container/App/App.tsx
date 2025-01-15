@@ -1,13 +1,17 @@
 import { Container, StyledEngineProvider } from '@mui/material'
 import Header from 'container/Header/Header'
+import { students } from 'data/students'
+import { IProfileStudent } from 'models'
 import Courses from 'pages/Courses/Courses'
 import Home from 'pages/Home/Home'
-import Students from 'pages/Students/Students'
+import StudentsList from 'pages/StudentsList/StudentsList'
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 
-type Props = {}
-const App = (props: Props) => {
+type StudentProps = {
+    student: IProfileStudent[]
+}
+const App = (props: StudentProps) => {
     return (
         <StyledEngineProvider injectFirst>
             <Header />
@@ -15,7 +19,10 @@ const App = (props: Props) => {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/courses" element={<Courses />} />
-                    <Route path="/students" element={<Students />} />
+                    <Route
+                        path="/students"
+                        element={<StudentsList student={students} />}
+                    />
                 </Routes>
             </Container>
         </StyledEngineProvider>
