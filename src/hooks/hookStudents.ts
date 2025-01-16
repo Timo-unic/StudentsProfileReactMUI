@@ -8,7 +8,7 @@ export function useStudents() {
     const [error, setError] = useState<string | null>(null)
 
     function createStudent(student: IProfileStudent) {
-        setStudents(prev=>[...students, student])
+        setStudents((prev)=>[...students, student])
     }
 
     async function fetchStudents() {

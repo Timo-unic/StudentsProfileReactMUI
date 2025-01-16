@@ -5,7 +5,7 @@ export interface IProfileStudent {
     studentLogin: string
     studentCardNumber?: string
     description?: string
-    dateOfBirth?: string
+    dateOfBirth?: Date
     age?: number
     image?: string
     isGraduated?: boolean

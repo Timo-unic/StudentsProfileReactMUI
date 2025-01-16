@@ -44,7 +44,7 @@ const StudentProfile = ({ student }: StudentProps) => {
                     </div>
                     <div>
                         <span className="font-bold">Date of Birth:</span>{' '}
-                        {student.dateOfBirth}
+                        {student.dateOfBirth?.toString()}
                     </div>
                 </Typography>
             </CardContent>
