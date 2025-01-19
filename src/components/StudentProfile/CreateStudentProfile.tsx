@@ -2,8 +2,8 @@ import { Button, FormHelperText, TextField } from '@mui/material'
 import axios from 'axios'
 import ErrorMessage from 'components/ErrorMessage/ErrorMessage'
 import { IProfileStudent } from 'models'
-import qs from 'qs'
 import React, { useState } from 'react'
+import qs from 'qs'
 
 const studentData: IProfileStudent = {
     firstName: '',
@@ -33,7 +33,7 @@ const CreateStudentProfile = ({ onStudentCreated }: CreateStudentProps) => {
             value.firstName.trim().length === 0 ||
             value.lastName.trim().length === 0 ||
             value.studentLogin.trim().length === 0 ||
-            value.description.trim().length === 0 ||
+            // value.description.trim().length === 0 ||
             value.dateOfBirth.trim().length === 0
         ) {
             setError('Please insert valid value.')
@@ -45,6 +45,17 @@ const CreateStudentProfile = ({ onStudentCreated }: CreateStudentProps) => {
         studentData.studentLogin = value.studentLogin
         studentData.description = value.description
         studentData.dateOfBirth = new Date(value.dateOfBirth)
+
+        // const options = {
+        //     method: 'POST',
+        //     url: 'https://localhost:7099/api/StudentProfile/profile',
+        //     data: qs.stringify(studentData),
+        //     headers: {
+        //         'Content-Type': 'application/x-www-form-urlencoded',
+        //     },
+        // }
+
+        // const response = await axios.request<IProfileStudent>(options)
 
         const response = await axios.post<IProfileStudent>(
             'https://localhost:7099/api/StudentProfile/profile',

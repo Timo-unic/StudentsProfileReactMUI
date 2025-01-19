@@ -22,7 +22,7 @@ const StudentsList = (props: StudentProps) => {
         <div>
             <Button
                 variant="contained"
-                className="fixed flex top-30 right-10"
+                className="fixed flex top-30 right-10 z-[1000]"
                 onClick={() => setModal(true)}
             >
                 Create Student
