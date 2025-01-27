@@ -7,6 +7,10 @@ export function useStudents() {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState<string | null>(null)
 
+    function createStudent(student: IProfileStudent) {
+        setStudents((prev)=>[...students, student])
+    }
+
     async function fetchStudents() {
         try {
             setError('')
@@ -26,6 +30,6 @@ export function useStudents() {
     useEffect(() => {
         fetchStudents()
     }, [])
-    return { students, loading, error }
+    return { students, loading, error, createStudent }
 }
 
