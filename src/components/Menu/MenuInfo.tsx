@@ -38,7 +38,7 @@ const MenuInfo = (props: Props) => {
                     }}
                 >
                     <MenuItem onClick={handleClose}>
-                        <Link to="/courses">Courses</Link>
+                        <Link to="/courses">COURSES</Link>
                     </MenuItem>
                 </Menu>
             </div>
